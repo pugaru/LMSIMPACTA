@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 {% block title %}Contato.{% endblock %}
 
-{% block main %}
+{% block main2 %}
+<center>
         <h1>Contato</h1>
         <form method="POST" action="">
+        	<descricao_curso>
                 {{ form.errors }}
                 {% csrf_token %}
                 Nome: <input name="nome" /><br>
                 Email: <input name="email" /><br>
-                Mensagens: <textarea name="mensagem"></textarea><br>
+                Mensagem: <textarea name="mensagem"></textarea><br>
                 <button type="submit">Enviar</button>
+            </descricao_curso>
         </form>
+</center>
+<br><br><br><br>
 {% endblock %}        
