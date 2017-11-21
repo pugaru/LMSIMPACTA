@@ -1,31 +1,33 @@
 from django.shortcuts import render
 #from .forms import ContatoForm
-from core.models import Curso
+from core.models import Curso,Usuario
 from core.forms import ContatoForm,CursoForm
-from core.cursoRN import CursoRN
 
 # Create your views here.
 def index(request):
     contexto={
-        "usuario":"Ser Humano",
+        #"usuario":Usuario.objects.all()
+        #"usuario":{{ usuario.nome }},
         #aluno,professor,sbruble
-        "perfil":"aluno",
+        #"perfil":"aluno",
     }
     return render(request,"index.html",contexto)
 
 def disciplina(request):
-    return render(request,"disciplina.html")
+    contexto={
+        "cursos":Curso.objects.all()
+    }
+    return render(request,"disciplina.html",contexto)
 
 def detalhe_curso(request):
     contexto={
-        "cursos": CursoRN().all()
+        "cursos":Curso.objects.all()
     }
     return render(request,"detalhe_curso.html",contexto)
 
 def lista_cursos(request):
     contexto={
-        # "cursos":Curso.objects.all()
-        "cursos": CursoRN().all()
+        "cursos":Curso.objects.all()
     }
     return render(request,"lista_cursos.html",contexto)
 
@@ -62,3 +64,4 @@ def curso(request):
         "form":form
     }
     return render(request,"curso.html",contexto)
+
