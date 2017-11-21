@@ -42,7 +42,7 @@ class Usuario(AbstractBaseUser):
         def get_full_name(self):
             return self.nome
 
-        def __str__(self):
+        def __unicode__(self):
                 return self.nome    
             
 
@@ -56,7 +56,7 @@ class Curso(models.Model):
         descricao = models.TextField(blank=True)
         Matriz_Curricular = models.TextField(blank=True)
 
-        def __str__(self):
+        def __unicode__(self):
                 return self.nome    
 
 class Aluno(Usuario):
