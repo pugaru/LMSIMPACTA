@@ -42,7 +42,7 @@ class Usuario(AbstractBaseUser):
         def get_full_name(self):
             return self.nome
 
-        def __str__(self):
+        def __unicode__(self):
                 return self.nome    
             
 
