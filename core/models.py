@@ -13,7 +13,7 @@ class Post(models.Model):
         self.Data_Publicada = timezone.now()
         self.save()
 
-    def __str__(self):
+    def __Unicode__(self):
         return self.Titulo
 
 
@@ -59,7 +59,7 @@ class Usuario(AbstractBaseUser):
         def get_full_name(self):
             return self.nome
 
-        def __str__(self):
+        def __Unicode__(self):
                 return self.nome    
             
 
@@ -74,7 +74,7 @@ class Curso(models.Model):
         descricao = models.TextField(blank=True)
         Matriz_Curricular = models.TextField(blank=True)
 
-        def __str__(self):
+        def __Unicode__(self):
                 return self.nome    
 
 class Aluno(Usuario):
@@ -87,7 +87,7 @@ class Disciplina(models.Model):
     curso = models.ForeignKey(
         Curso
     )
-    def __str__(self):
+    def __Unicode__(self):
         return self.nome
 
 class Professor(Usuario):
